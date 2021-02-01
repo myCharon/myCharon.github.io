@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>chanonxu&#39;s Blog</title>
+    <link>http://example.com/</link>
+    
+    <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description>我想拿offer!!!</description>
+    <pubDate>Mon, 01 Feb 2021 15:35:11 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>linux常用命令总结</title>
+      <link>http://example.com/2021/02/01/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</link>
+      <guid>http://example.com/2021/02/01/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</guid>
+      <pubDate>Mon, 01 Feb 2021 15:15:55 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;使用find命令进行文件&quot;&gt;&lt;a href=&quot;#使用find命令进行文件&quot; class=&quot;headerlink&quot; title=&quot;使用find命令进行文件&quot;&gt;&lt;/a&gt;使用find命令进行文件&lt;/h2&gt;&lt;h3 id=&quot;语法-find-搜索范围-匹配条件&quot;&gt;&lt;a hre</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="使用find命令进行文件"><a href="#使用find命令进行文件" class="headerlink" title="使用find命令进行文件"></a>使用find命令进行文件</h2><h3 id="语法-find-搜索范围-匹配条件"><a href="#语法-find-搜索范围-匹配条件" class="headerlink" title="语法: find [搜索范围] [匹配条件]"></a>语法: find [搜索范围] [匹配条件]</h3><p>根据文件名搜索</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name file_name   / 表示范围，全局范围下  file_name表示搜索的文件名称</span><br></pre></td></tr></table></figure><p>根据文件大小搜索</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find / -size +204800   查询大小大于100M的文件</span><br><span class="line"></span><br><span class="line">其中 +n表示大于n -n表示小于n n等于n  在linux系统中 一个数据块=0.5K 100MB=204800</span><br><span class="line">数据块是linux存储文件的单位</span><br></pre></td></tr></table></figure><p>根据时间搜索</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find / -amin n    查询当前目录下过去n分钟被读取过的文件</span><br><span class="line"></span><br><span class="line">-amin n 在过去n分钟被读取过    -cmin n 在过去n分钟被修改过</span><br><span class="line">-atime n 在过去n天被读取过    -ctime n 在过去n天被修改过  这四个方式使用同上 n支持+-=</span><br></pre></td></tr></table></figure><p>根据文件类型搜索</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find / -<span class="built_in">type</span> file_type file_name</span><br><span class="line">其中file_type表示文件类型 常用的有:  f:一般文件  d:目录  l:软链接文件  s:socket</span><br></pre></td></tr></table></figure><p>与其他命令同用</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将find查找的文件直接进行某种操作 find / -name file_name -<span class="built_in">exec</span> ls -l &#123;&#125; \;</span><br><span class="line">其中 / 表示路径   file_name 查找文件名    ls -l  进行什么操作   其它东西格式固定</span><br><span class="line">将 -<span class="built_in">exec</span> 换成 -ok 则在操作每个文件时都会询问是否进行操作</span><br></pre></td></tr></table></figure><p>运算符分割  -a 两个条件同时满足    -o 两个条件满足任意一个即可<br>最后 使用find搜索会很慢  如果使用 尽量将范围缩小化</p>]]></content:encoded>
+      
+      
+      
+      <category domain="http://example.com/tags/linux/">linux</category>
+      
+      
+      <comments>http://example.com/2021/02/01/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>
