@@ -192,8 +192,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-02-01 23:15:55" itemprop="dateCreated datePublished" datetime="2021-02-01T23:15:55+08:00">2021-02-01</time>
+              <time title="创建时间：2021-02-01 23:15:55 / 修改时间：23:35:11" itemprop="dateCreated datePublished" datetime="2021-02-01T23:15:55+08:00">2021-02-01</time>
             </span>
 
           <br>
@@ -202,7 +203,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
+              <span>593</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -221,7 +222,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <h2 id="使用find命令进行文件"><a href="#使用find命令进行文件" class="headerlink" title="使用find命令进行文件"></a>使用find命令进行文件</h2><h3 id="语法-find-搜索范围-匹配条件"><a href="#语法-find-搜索范围-匹配条件" class="headerlink" title="语法: find [搜索范围] [匹配条件]"></a>语法: find [搜索范围] [匹配条件]</h3><p>根据文件名搜索</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name file_name   / 表示范围，全局范围下  file_name表示搜索的文件名称</span><br></pre></td></tr></table></figure>
+<p>根据文件大小搜索</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find / -size +204800   查询大小大于100M的文件</span><br><span class="line"></span><br><span class="line">其中 +n表示大于n -n表示小于n n等于n  在linux系统中 一个数据块=0.5K 100MB=204800</span><br><span class="line">数据块是linux存储文件的单位</span><br></pre></td></tr></table></figure>
+<p>根据时间搜索</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find / -amin n    查询当前目录下过去n分钟被读取过的文件</span><br><span class="line"></span><br><span class="line">-amin n 在过去n分钟被读取过    -cmin n 在过去n分钟被修改过</span><br><span class="line">-atime n 在过去n天被读取过    -ctime n 在过去n天被修改过  这四个方式使用同上 n支持+-=</span><br></pre></td></tr></table></figure>
+<p>根据文件类型搜索</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find / -<span class="built_in">type</span> file_type file_name</span><br><span class="line">其中file_type表示文件类型 常用的有:  f:一般文件  d:目录  l:软链接文件  s:socket</span><br></pre></td></tr></table></figure>
+
+<p>与其他命令同用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将find查找的文件直接进行某种操作 find / -name file_name -<span class="built_in">exec</span> ls -l &#123;&#125; \;</span><br><span class="line">其中 / 表示路径   file_name 查找文件名    ls -l  进行什么操作   其它东西格式固定</span><br><span class="line">将 -<span class="built_in">exec</span> 换成 -ok 则在操作每个文件时都会询问是否进行操作</span><br></pre></td></tr></table></figure>
+<p>运算符分割  -a 两个条件同时满足    -o 两个条件满足任意一个即可<br>最后 使用find搜索会很慢  如果使用 尽量将范围缩小化</p>
+
       
     </div>
 
@@ -398,6 +411,12 @@
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
   </nav>
 </div>
   <div class="cc-license motion-element" itemprop="license">
@@ -434,7 +453,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">0k</span>
+    <span title="站点总字数">1k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
@@ -446,7 +465,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共76字</span>
+  <span class="post-count">博客全站共443字</span>
 </div>
 
         
