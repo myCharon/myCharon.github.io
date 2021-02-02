@@ -4,9 +4,9 @@
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>chanonxu&#39;s Blog</title>
-    <link>http://example.com/</link>
+    <link>http://charonxu.cn/</link>
     
-    <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="http://charonxu.cn/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>我想拿offer!!!</description>
     <pubDate>Mon, 01 Feb 2021 15:35:11 GMT</pubDate>
@@ -14,8 +14,8 @@
     
     <item>
       <title>linux常用命令总结</title>
-      <link>http://example.com/2021/02/01/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</link>
-      <guid>http://example.com/2021/02/01/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</guid>
+      <link>http://charonxu.cn/2021/02/01/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</link>
+      <guid>http://charonxu.cn/2021/02/01/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</guid>
       <pubDate>Mon, 01 Feb 2021 15:15:55 GMT</pubDate>
       
         
@@ -29,10 +29,10 @@
       
       
       
-      <category domain="http://example.com/tags/linux/">linux</category>
+      <category domain="http://charonxu.cn/tags/linux/">linux</category>
       
       
-      <comments>http://example.com/2021/02/01/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#disqus_thread</comments>
+      <comments>http://charonxu.cn/2021/02/01/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#disqus_thread</comments>
       
     </item>
     
