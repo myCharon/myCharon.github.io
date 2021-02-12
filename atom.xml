@@ -6,7 +6,7 @@
   <link href="http://charonxu.cn/atom.xml" rel="self"/>
   
   <link href="http://charonxu.cn/"/>
-  <updated>2021-02-12T05:39:59.454Z</updated>
+  <updated>2021-02-12T16:18:44.097Z</updated>
   <id>http://charonxu.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://charonxu.cn/2021/02/12/ubuntu%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/"/>
-    <id>http://charonxu.cn/2021/02/12/ubuntu%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/</id>
-    <published>2021-02-12T05:37:44.300Z</published>
-    <updated>2021-02-12T05:39:59.454Z</updated>
+    <title>ubuntu报错记录</title>
+    <link href="http://charonxu.cn/2021/02/13/ubuntu%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/"/>
+    <id>http://charonxu.cn/2021/02/13/ubuntu%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/</id>
+    <published>2021-02-12T16:18:12.000Z</published>
+    <updated>2021-02-12T16:18:44.097Z</updated>
     
     <content type="html"><![CDATA[<p><strong>1.命令行无法打开firefox</strong></p><p>提示：<code>Error: no DISPLAY environment variable specified</code></p><p>解决方案：不应该使用root权限打开，使用普通用户权限</p>]]></content>
     
@@ -35,6 +35,8 @@
     
     
     
+    <category term="报错记录" scheme="http://charonxu.cn/categories/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/"/>
+    
     
   </entry>
   
@@ -43,15 +45,14 @@
     <link href="http://charonxu.cn/2021/02/11/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%934/"/>
     <id>http://charonxu.cn/2021/02/11/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%934/</id>
     <published>2021-02-11T09:46:31.000Z</published>
-    <updated>2021-02-12T16:08:21.586Z</updated>
+    <updated>2021-02-12T16:17:21.430Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="一、运行Shell脚本"><a href="#一、运行Shell脚本" class="headerlink" title="一、运行Shell脚本"></a>一、运行Shell脚本</h1><h2 id="shell基础"><a href="#shell基础" class="headerlink" title="shell基础"></a>shell基础</h2><p> #! 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。</p><p><strong>执行脚本</strong></p><p>执行脚本的两种方法：</p><pre><code>1.chmod 755 file.sh    先修改可执行权限cd到当前目录下 使用 ./file.sh   file.sh为执行的脚本名称2.通过bash调用bash file.sh如果是html文本使用firefox浏览器执行： firefox file</code></pre><p>使用echo命令进行文本时，使用的引号可以包含换行符，因此可以包含多个文本行。</p><p>使用echo -e选项可以支持\控制的字符转换</p><h2 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h2><p><strong>创建变量和常量</strong></p><p>创建变量直接创建 例如： <code>foo=&quot;hello&quot;</code></p><p>运用时 需使用 <code>$+变量名</code></p><p>强制常量不发生变化 使用declare命令的-r选项</p><pre><code>declare -r foo=&quot;hello&quot;   foo后面将不会再被改变 相当于c++z中的const</code></pre><p><strong>为变量和常量赋值</strong></p><p>shell并不关心赋给变量的值的数值类型，可以通过declare命令的-i选项，强制shell将变量限制为整数类型。</p><p>在赋值时，变量名、等号和值之间不能含有空格。</p><pre><code>a=z                  将字符串z赋值给ab=&quot;a string&quot;         嵌入的空格必须用引号引起来c=&quot;a string and $b&quot;  可以被扩展到赋值语句中的其他扩展、比如变量d=$((5*7))           算术扩展e=$(ls -l foo.txt)   命令的结果f=&quot;\t\ta string\n&quot;   转义序列 比如制表符和换行符</code></pre><p>可以在一行中对多个变量赋值。</p><p>当字符变量因为上下文变得并不明确时 可以使用{}</p><h2 id="here文档"><a href="#here文档" class="headerlink" title="here文档"></a>here文档</h2><p>除了使用echo命令进行文本输出，here文档是I/O重定向的另一种形式。</p><p>工作形式如下：</p><pre><code>command &lt;&lt; tokentexttoken其中command是接收标准输入的文件名，token是用来指示嵌入文本结尾的字符串。cat &lt;&lt; _EOF_..._EOF__EOF_被选作token，表示文本的结尾 token必须单独一行出现，并且文本行的末尾没有空格</code></pre><h1 id="二、自顶向下设计"><a href="#二、自顶向下设计" class="headerlink" title="二、自顶向下设计"></a>二、自顶向下设计</h1><p><strong>shell函数</strong></p><p>shell函数有两种语法形式：</p><pre><code>function name&#123;    commands    return&#125;其中name是指这个函数的名称，commands是这个函数的一系列指令name()&#123;    commands    return&#125;</code></pre><p><strong>局部变量</strong></p><p>局部变量是通过在变量名前添加单词local来定义。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="一、运行Shell脚本"><a href="#一、运行Shell脚本" class="headerlink" title="一、运行Shell脚本"></a>一、运行Shell脚本</h1><h2 id="shell基础"><a href="#shell基础" class="headerlink" title="shell基础"></a>shell基础</h2><p> #! 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。</p><p><strong>执行脚本</strong></p><p>执行脚本的两种方法：</p><a id="more"></a><pre><code>1.chmod 755 file.sh    先修改可执行权限cd到当前目录下 使用 ./file.sh   file.sh为执行的脚本名称2.通过bash调用bash file.sh如果是html文本使用firefox浏览器执行： firefox file</code></pre><p>使用echo命令进行文本时，使用的引号可以包含换行符，因此可以包含多个文本行。</p><p>使用echo -e选项可以支持\控制的字符转换</p><h2 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h2><p><strong>创建变量和常量</strong></p><p>创建变量直接创建 例如： <code>foo=&quot;hello&quot;</code></p><p>运用时 需使用 <code>$+变量名</code></p><p>强制常量不发生变化 使用declare命令的-r选项</p><pre><code>declare -r foo=&quot;hello&quot;   foo后面将不会再被改变 相当于c++z中的const</code></pre><p><strong>为变量和常量赋值</strong></p><p>shell并不关心赋给变量的值的数值类型，可以通过declare命令的-i选项，强制shell将变量限制为整数类型。</p><p>在赋值时，变量名、等号和值之间不能含有空格。</p><pre><code>a=z                  将字符串z赋值给ab=&quot;a string&quot;         嵌入的空格必须用引号引起来c=&quot;a string and $b&quot;  可以被扩展到赋值语句中的其他扩展、比如变量d=$((5*7))           算术扩展e=$(ls -l foo.txt)   命令的结果f=&quot;\t\ta string\n&quot;   转义序列 比如制表符和换行符</code></pre><p>可以在一行中对多个变量赋值。</p><p>当字符变量因为上下文变得并不明确时 可以使用{}</p><h2 id="here文档"><a href="#here文档" class="headerlink" title="here文档"></a>here文档</h2><p>除了使用echo命令进行文本输出，here文档是I/O重定向的另一种形式。</p><p>工作形式如下：</p><pre><code>command &lt;&lt; tokentexttoken其中command是接收标准输入的文件名，token是用来指示嵌入文本结尾的字符串。cat &lt;&lt; _EOF_..._EOF__EOF_被选作token，表示文本的结尾 token必须单独一行出现，并且文本行的末尾没有空格</code></pre><h1 id="二、自顶向下设计"><a href="#二、自顶向下设计" class="headerlink" title="二、自顶向下设计"></a>二、自顶向下设计</h1><p><strong>shell函数</strong></p><p>shell函数有两种语法形式：</p><pre><code>function name&#123;    commands    return&#125;其中name是指这个函数的名称，commands是这个函数的一系列指令name()&#123;    commands    return&#125;</code></pre><p><strong>局部变量</strong></p><p>局部变量是通过在变量名前添加单词local来定义。</p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h1 id=&quot;一、运行Shell脚本&quot;&gt;&lt;a href=&quot;#一、运行Shell脚本&quot; class=&quot;headerlink&quot; title=&quot;一、运行Shell脚本&quot;&gt;&lt;/a&gt;一、运行Shell脚本&lt;/h1&gt;&lt;h2 id=&quot;shell基础&quot;&gt;&lt;a href=&quot;#shell基础&quot; c</summary>
-      
+    <summary type="html">&lt;h1 id=&quot;一、运行Shell脚本&quot;&gt;&lt;a href=&quot;#一、运行Shell脚本&quot; class=&quot;headerlink&quot; title=&quot;一、运行Shell脚本&quot;&gt;&lt;/a&gt;一、运行Shell脚本&lt;/h1&gt;&lt;h2 id=&quot;shell基础&quot;&gt;&lt;a href=&quot;#shell基础&quot; class=&quot;headerlink&quot; title=&quot;shell基础&quot;&gt;&lt;/a&gt;shell基础&lt;/h2&gt;&lt;p&gt; #! 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;执行脚本&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;执行脚本的两种方法：&lt;/p&gt;</summary>
     
     
     
